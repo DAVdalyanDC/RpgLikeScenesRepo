@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using FactoryPattern;
 using UnityEngine;
+using FactoryPattern.PopupMenu;
 
 namespace Test
 {
@@ -31,7 +32,6 @@ namespace Test
                 return _instance;
             }
         }
-
 
         public TController Show<TView, TController, TModel>(bool isPopup = false, TModel model = default)
             where TView : AbstractView<TController, TModel>

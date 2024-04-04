@@ -23,17 +23,17 @@ namespace FactoryPattern.Menu
 
         private void OnPopupButtonClicked()
         {
-            UIManager.Instance.Show<PopupView, PopupController, PopupModel>(true);
+            Controller.OnPopupButtonClicked();
         }
 
         private void OnLeaderBoardClicked()
         {
-            UIManager.Instance.Show<LeaderboardView, LeaderboardController, LeaderboardModel>(false,new LeaderboardModel());
+            Controller.OnLeaderBoardClicked();
         }
 
         private void OnSelectModeClicked()
         {
-            UIManager.Instance.Show<SelectModeView, SelectModeController, SelectModeModel>();
+          Controller.OnSelectModeClicked();
         }
         
         internal override void Initialize()

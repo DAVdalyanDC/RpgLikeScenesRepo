@@ -9,9 +9,9 @@ public class SelectModeView : AbstractView<SelectModeController, SelectModeModel
     public ModeElement[] _elements;
     public Button backButton;
 
-    public void OnBackButtonClicked()
+    private void OnBackButtonClicked()
     {
-        UIManager.Instance.Show<MenuView, MenuController, MenuModel>();
+        Controller.OnBackButtonClicked();
     }
 
     void OnEnable()
@@ -33,12 +33,9 @@ public class SelectModeView : AbstractView<SelectModeController, SelectModeModel
             view.OnElementSelected -= HandleElementSelected;
         }
     }
-    
-    
 
     private void HandleElementSelected(string element)
     {
-        Model.SelectElement(element);
         Controller.OnElementSelected(element);
     }
 

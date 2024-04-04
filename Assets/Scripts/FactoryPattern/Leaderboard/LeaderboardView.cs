@@ -116,7 +116,7 @@ public class LeaderboardView : AbstractView<LeaderboardController,LeaderboardMod
 
     private void OnCloseButtonClicked()
     {
-        UIManager.Instance.Show<MenuView, MenuController, MenuModel>();
+        Controller.OnCloseButtonClicked();
     }
 
     private void SetNavigationState()

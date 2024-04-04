@@ -1,5 +1,7 @@
 using System;
 using FactoryPattern;
+using FactoryPattern.Menu;
+using Test;
 using UnityEngine;
 
 [Serializable]
@@ -37,6 +39,11 @@ public class LeaderboardController : AbstractController<LeaderboardModel>
 
         Page = 0;
         //Load();
+    }
+
+    public void OnCloseButtonClicked()
+    {
+        UIManager.Instance.Show<MenuView, MenuController, MenuModel>();
     }
 
     private void Load()

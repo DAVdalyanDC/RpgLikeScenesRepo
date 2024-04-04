@@ -5,12 +5,17 @@ namespace FactoryPattern
 {
         public abstract class AbstractController : IDisposable
         {
+            public event Action Opened;
+            public event Action Closed;
+
             public virtual void Show()
             {
+                Opened?.Invoke();
             }
 
             public virtual void Hide()
             {
+                Closed?.Invoke();
             }
 
             public abstract void Dispose();

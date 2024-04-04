@@ -13,7 +13,8 @@ namespace FactoryPattern
 
         private void Run()
         {
-            UIManager.Instance.Show<MenuView, MenuController, MenuModel>();
+            MenuController controller = UIManager.Instance.Show<MenuView, MenuController, MenuModel>();
+         
         }
     }
 }
