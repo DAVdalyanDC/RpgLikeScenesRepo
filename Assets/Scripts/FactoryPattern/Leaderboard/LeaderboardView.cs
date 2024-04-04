@@ -37,7 +37,7 @@ public class LeaderboardView : AbstractView<LeaderboardController,LeaderboardMod
         sortButton.onClick.AddListener(OnSortClicked);
         nextButton.onClick.AddListener(OnNextClicked);
         previousButton.onClick.AddListener(OnPreviousClicked);
-        ToggleChanged(LeaderboardType.Friends);
+        // ToggleChanged(LeaderboardType.Friends);
         closeButton.onClick.AddListener(OnCloseButtonClicked);
         
     }
@@ -54,7 +54,6 @@ public class LeaderboardView : AbstractView<LeaderboardController,LeaderboardMod
 
     public void OnLeaderboardLoaded()
     {
-        Debug.Log("LOADDs");
         SetNavigationState();
         if (!_areItemsInitialized)
         {
@@ -90,6 +89,7 @@ public class LeaderboardView : AbstractView<LeaderboardController,LeaderboardMod
 
     private void PopulateItems()
     {
+        Debug.Log("LOADDs");
         for (int i = 0; i < Controller.Count; i++)
         {
             var item = Instantiate(entryItemTemplatePrefab, container);

@@ -36,11 +36,19 @@ public class PopupView : AbstractView<PopupController, PopupModel>
     }
     private void YesButtonClicked()
     {
+        DisableButtons();
         Controller.YesButtonClicked();
     }
-    
+
+    private void DisableButtons()
+    {
+        yesButton.interactable = false;
+        noButton.interactable = false;
+    }
+
     private void NoButtonClicked()
     {
+        DisableButtons();
         Controller.NoButtonClicked();
     }
     

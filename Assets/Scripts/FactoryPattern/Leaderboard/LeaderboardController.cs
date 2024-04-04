@@ -17,12 +17,14 @@ public class LeaderboardController : AbstractController<LeaderboardModel>
 
     public override void Show()
     {
+        SetLeaderboardTypeAndCount(LeaderboardType.Friends);
         Model.OnLeaderboardLoaded += ((LeaderboardView)View).OnLeaderboardLoaded;
         Load();
     }
 
     public void SetLeaderboardTypeAndCount(LeaderboardType type)
     {
+        Debug.Log("VAR");
         CurrentLeaderboardType = type;
         switch (type)
         {
@@ -37,7 +39,7 @@ public class LeaderboardController : AbstractController<LeaderboardModel>
                 break;
         }
 
-        Page = 0;
+        //Page = 0;
         //Load();
     }
 
